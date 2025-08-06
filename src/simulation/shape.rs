@@ -1,17 +1,23 @@
 use bevy::prelude::Vec3;
-use std::rc::Rc;
 
 pub struct Vertex {
-    position: Vec3,
-    edges: Vec<Rc<Edge>>
+    pub position: Vec3,
+    pub edges: Vec<usize>
 }
 
 pub struct Edge {
-    vertices: [Rc<Vertex>; 2],
-    faces: [Rc<Face>; 2]
+    pub vertices: [usize; 2],
+    pub faces: [usize; 2]
 }
 
 pub struct Face {
-    edges: Vec<Rc<Edge>>,
-    positon: Vec3
+    pub edges: Vec<usize>,
+    pub vertices: Vec<usize>,
+    pub positon: Vec3
+}
+
+pub struct Polyhedron {
+    pub faces: Vec<Face>,
+    pub edges: Vec<Edge>,
+    pub vertices: Vec<Vertex>
 }
