@@ -1,1 +1,1 @@
-mod meshgenerator;
+pub mod meshgenerator;
